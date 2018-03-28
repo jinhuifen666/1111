@@ -19,7 +19,7 @@ module.exports = {
     // 自动打开浏览器
     open: true,
     // 端口号
-    port: 3000,
+    port: 3009,
   },
 
   // 用来处理非JS的静态资源

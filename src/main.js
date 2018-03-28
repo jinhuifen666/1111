@@ -27,13 +27,16 @@ import './assets/css/index.css';
 // 引入axios
 import axios from 'axios';
 // 设置axios的公共路劲
-axios.defaults.baseURL='http://vue.studyit.io';
+axios.defaults.baseURL='http://vue.studyit.io/';
 // axios不是vue的插件，不能使用use()来安装插件
 // 只要是与vue无关的第三方的包，都可以使用下面这种用法
 // 在vue的原型上添加一个属性，值为axios
 Vue.prototype.$http = axios;
 
 
+// 导入过滤器
+// 因为filter--index.js没有到导出，只需要导入，index.js会自动去找
+import './filter';
 
 
 // 11-导入组件
@@ -42,16 +45,21 @@ import Vip from './components/Vip.vue';
 import Cart from './components/cart/Cart.vue';
 import Search from './components/Search.vue';
 
+ import NewsList from './components/news/NewsList.vue';
 // import Home from './components/Home.vue';
 
 
 // 10-创建路由实例
 const router = new VueRouter({
     routes:[
+        {path:'/',redirect:'/home'},
         {path:'/home',component:Home},
         {path:'/vip',component:Vip},
         {path:'/cart',component:Cart},
         {path:'/search',component:Search},
+
+        {path:'/home/news',component:NewsList},
+        
         
     ],
     // 修改高亮类名

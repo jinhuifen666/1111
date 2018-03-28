@@ -6,12 +6,15 @@
             <img :src="item.img" :alt="item.url">
         </mt-swipe-item>
     </mt-swipe>
-
+<!--  -->
     <!-- 九宫格菜单 -->
      <ul class="mui-table-view mui-grid-view mui-grid-9 ">
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            <router-link to="/home/news">
                 <span class="mui-icon "></span>
-                <div class="mui-media-body">新闻资讯</div></a></li>
+                <div class="mui-media-body">新闻资讯</div>
+            </router-link>
+        </li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                 <span class="mui-icon "></span>
                 <div class="mui-media-body">图片分享</div></a></li>
@@ -60,7 +63,7 @@ export default {
                     // 如果res.data.status===0，说明请求成功
                     if(data.status === 0){
                         // 将获取到的值给list
-                        console.log(data.message)
+                        // console.log(data.message)
                          this.list = data.message;
                     }
                 })
