@@ -43,7 +43,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+/* 
+添加 scoped后，style的样式只对当前组件起作用
+只对页面中有的元素起作用的，动态生成的不起作用
+
+*/
 		.content{
 			margin:40px 0 50px 0;
 		}

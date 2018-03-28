@@ -1,8 +1,8 @@
 <template>
   <div class="news-list">
       <ul class="mui-table-view mui-table-view-chevron">
-			<li class="mui-table-view-cell mui-media" v-for='item in list' :key='item.id'>
-				<a class="mui-navigate-right">
+			<li class="mui-table-view-cell mui-media" v-for='item in list' :key='item.id' @click='getNewsInfo(item.id)'>
+				<a href='javascript:void(0);' class="mui-navigate-right">
 					<img class="mui-media-object mui-pull-left" :src="item.img_url">
 					<div class="mui-media-body">
 						<h4 class="news-title mui-ellipsis">{{ item.title }}</h4>
@@ -32,6 +32,7 @@ export default {
 	},
 	// 提供方法
 	methods:{
+		// 获取新闻列表
 		getnewslist(){
 			this.$http
 				.get('/api/getnewslist')
@@ -41,6 +42,10 @@ export default {
 						this.list = data.message;
 					}
 				})
+		},
+		// 编程式导航
+		getNewsInfo(id){
+			this.$router.push(`/home/info/${id}`);
 		}
 	}
 }
