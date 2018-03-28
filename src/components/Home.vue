@@ -51,6 +51,7 @@ export default {
 <style lang="scss">
 .home-swipe {
     height: 250px;
+    
 
     img {
       width: 100%;
