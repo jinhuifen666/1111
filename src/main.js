@@ -12,10 +12,6 @@ Vue.component(Button.name, Button);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 
-// 8-引入路由
-import VueRouter from 'vue-router';
-// 9-加载包
-Vue.use(VueRouter);
 
 // 6-引mui的样式和扩展样式
 import './lib/mui/css/mui.min.css';
@@ -23,6 +19,7 @@ import './lib/mui/css/mui.min.css';
 import './lib/mui/css/icons-extra.css';
 // 引入自己的样式
 import './assets/css/index.css';
+
 
 // 引入axios
 import axios from 'axios';
@@ -33,38 +30,13 @@ axios.defaults.baseURL='http://vue.studyit.io/';
 // 在vue的原型上添加一个属性，值为axios
 Vue.prototype.$http = axios;
 
-
 // 导入过滤器
 // 因为filter--index.js没有到导出，只需要导入，index.js会自动去找
 import './filter';
 
+//  导入路由实例
+import router from './router';
 
-// 11-导入组件
-import Home from './components/Home.vue';
-import Vip from './components/Vip.vue';
-import Cart from './components/cart/Cart.vue';
-import Search from './components/Search.vue';
-
- import NewsList from './components/news/NewsList.vue';
-// import Home from './components/Home.vue';
-
-
-// 10-创建路由实例
-const router = new VueRouter({
-    routes:[
-        {path:'/',redirect:'/home'},
-        {path:'/home',component:Home},
-        {path:'/vip',component:Vip},
-        {path:'/cart',component:Cart},
-        {path:'/search',component:Search},
-
-        {path:'/home/news',component:NewsList},
-        
-        
-    ],
-    // 修改高亮类名
-    linkActiveClass:'mui-active',
-})
 
 
 // 2-创建vue实例
