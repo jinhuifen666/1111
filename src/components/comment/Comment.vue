@@ -22,7 +22,17 @@
 export default {
 
 //  接收父组件传递过来
-props:['commentId'],
+// props:['commentId'],
+// props 验证
+props:{
+    // 接收commitID这个属性
+    // props对象的值是接收的属性，
+    // 数据类型必须是数字类型
+    commentId:{
+        require:true,  //必填项
+        type:Number    //接收的类型
+    } 
+},
 
 created(){
     console.log(this.commentId);

@@ -10,7 +10,7 @@
     <div class="content" v-html= 'info.content'></div>
 
     <!--  评论组件 -->
-    <comment :commentId='info.id' v-if='isLoaded'></comment>
+    <comment :commentId="info.id" v-if='isLoaded'></comment>
 
     </div>
 </template>

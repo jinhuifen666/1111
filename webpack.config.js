@@ -13,8 +13,8 @@ module.exports = {
     // 输出文件名称
     filename: 'bundle.js'
   },
-// 有助于定位错误信息的位置
-  devtool:'eval-source-map',
+  // 有利于开发期间定位错误信息
+  devtool: 'eval-source-map',
   // webpack-dev-server
   devServer: {
     // 自动打开浏览器
@@ -51,7 +51,9 @@ module.exports = {
       },
 
       // 处理ES6或者更高级的JS语法：
-      { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
+      // exclude后的值，表示babel不解析的文件，因为babel默认开启严格模式（strict moduel）,
+      // mui 中的语法不遵循严格模式的规范，所以需要设置babel忽略加载
+      { test: /\.js$/, use: 'babel-loader', exclude: /node_modules|lib/ },
 
       // 处理 Vue单文件组件
       { test: /\.vue$/, use: 'vue-loader' }

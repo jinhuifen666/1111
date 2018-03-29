@@ -13,33 +13,37 @@
 
 	<!-- 底部导航菜单 -->
     <nav class="mui-bar mui-bar-tab">
-			<router-link class="mui-tab-item" to="/home">
+			<router-link class="mui-tab-item" to="/home" @click.native="goPage('/home')">
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/vip">
+			<router-link class="mui-tab-item" to="/vip" @click.native="goPage('/vip')">
 				<span class="mui-icon mui-icon-contact"></span>
 				<span class="mui-tab-label">会员</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/cart">
+			<router-link class="mui-tab-item" to="/cart" @click.native="goPage('/cart')">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-cart">
           <span class="mui-badge">0</span>
         </span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/search">
+			<router-link class="mui-tab-item" to="/search" @click.native="goPage('/search')">
 				<span class="mui-icon mui-icon-search"></span>
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
 		</nav>
-
-
 	</div>
 </template>
 
 <script>
 export default {
-
+		 methods: {
+    // 页面跳转
+    goPage(path) {
+      console.log('跳了');
+      this.$router.push(path)
+    }
+  }
 }
 </script>
 

@@ -5,12 +5,15 @@
 import App from './App.vue';
 
 // 4-引入mint-ui
-import { Header,Button,Swipe,SwipeItem } from 'mint-ui';
+import { Header,Button,Swipe,SwipeItem,Lazyload  } from 'mint-ui';
 // 5-加载成全局组件
 Vue.component(Header.name, Header);
 Vue.component(Button.name, Button);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+
+// 懒加载（lazy）是vue的插件，所以需要use()
+Vue.use(Lazyload);
 
 
 // 6-引mui的样式和扩展样式
