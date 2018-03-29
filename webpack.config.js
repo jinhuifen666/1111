@@ -13,7 +13,8 @@ module.exports = {
     // 输出文件名称
     filename: 'bundle.js'
   },
-
+// 有助于定位错误信息的位置
+  devtool:'eval-source-map',
   // webpack-dev-server
   devServer: {
     // 自动打开浏览器
