@@ -15,7 +15,7 @@
 
 		<!-- 图片列表 -->
 		<ul class="category-img-list">
-      <li class="img-list-item" v-for='item in iamgelist' :key='item.id'>
+      <li class="img-list-item" v-for='item in iamgelist' :key='item.id' @click="goPhotoInfo(item.id)">
         <img v-lazy="item.img_url" > 
         <div>
           <h2>{{ item.title}}</h2>
@@ -29,7 +29,7 @@
 <script>
 // 导入mui
 import mui from '../../lib/mui/js/mui.min.js';
-export default {
+export default { 
   //操作DOM，在mounted的钩子函数中操作
   mounted(){
     // 顶部导航区域滚动
@@ -50,6 +50,7 @@ export default {
     },
     // 方法
     methods:{
+      
       //  获取分类菜单的请求 
       getCategoryList(){
         this.$http
@@ -73,7 +74,14 @@ export default {
               console.log(data.message) 
             }
           })
-      }
+      },
+
+
+    // 跳转到详情
+    goPhotoInfo(id){
+      this.$router.push(`/home/photoinfo/${id}`);
+    }
+
     }
 
 };

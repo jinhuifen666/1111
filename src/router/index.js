@@ -15,6 +15,7 @@ import Search from '../components/Search.vue';
  import NewsInfo from '../components/news/NewsInfo.vue';
 // 图片组件
 import PhotoList from '../components/pohtos/PhotoList.vue';
+import PhotoInfo from '../components/pohtos/PhotoInfo.vue';
 // 10-创建路由实例
 const router = new VueRouter({
     routes:[
@@ -28,6 +29,8 @@ const router = new VueRouter({
         {path:'/home/info/:id',component:NewsInfo},
         // 图片
         {path:'/home/photolist',component:PhotoList},
+        {path:'/home/photoinfo/:id',component:PhotoInfo},
+        
           
     ],
     // 修改高亮类名
