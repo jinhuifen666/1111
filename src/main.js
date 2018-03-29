@@ -16,6 +16,8 @@ Vue.component(SwipeItem.name, SwipeItem);
 Vue.use(Lazyload);
 
 
+
+
 // 6-引mui的样式和扩展样式
 import './lib/mui/css/mui.min.css';
 // 7-扩展是为了加载购物车的小图标
@@ -39,6 +41,9 @@ import './filter';
 
 //  导入路由实例
 import router from './router';
+
+import VuePreview from 'vue-preview'; 
+Vue.use(VuePreview)
 
 
 
