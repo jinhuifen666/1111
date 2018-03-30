@@ -16,6 +16,11 @@ import Search from '../components/Search.vue';
 // 图片组件
 import PhotoList from '../components/pohtos/PhotoList.vue';
 import PhotoInfo from '../components/pohtos/PhotoInfo.vue';
+
+// 商品组件
+import GoodList from '../components/goods/GoodList.vue';
+import GoodInfo from '../components/goods/GoodInfo.vue';
+
 // 10-创建路由实例
 const router = new VueRouter({
     routes:[
@@ -30,6 +35,9 @@ const router = new VueRouter({
         // 图片
         {path:'/home/photolist',component:PhotoList},
         {path:'/home/photoinfo/:id',component:PhotoInfo},
+        // 商品
+        {path:'/home/goodlist',component:GoodList},
+        {path:'/home/goodinfo/:id',component:GoodInfo},
         
           
     ],

@@ -19,8 +19,11 @@
 </template>
 
 <script>
+
 // 导入评论组件
 import Comment from '../comment/Comment.vue';
+
+
 export default {
     // 发送请求
     created(){  

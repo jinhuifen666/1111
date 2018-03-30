@@ -45,13 +45,16 @@ import router from './router';
 import VuePreview from 'vue-preview'; 
 Vue.use(VuePreview)
 
-
-
+// 导入vuex
+// index.js可以省略
+import store from './store'
+    
 // 2-创建vue实例
 const vm = new Vue({
     el:'#app',
     // 渲染根组件App
      render: c => c(App),
-     router
+     router,
+     store
     
 })
